@@ -279,7 +279,7 @@ static int udp_set_multicast_sources(URLContext *h,
         return AVERROR(EINVAL);
 #endif
     }
-#if HAVE_STRUCT_IP_MREQ_SOURCE && defined(IP_BLOCK_SOURCE)
+#if HAVE_STRUCT_IP_MREQ_SOURCE && defined(IP_BLOCK_SOURCE) && FALSE
     for (i = 0; i < nb_sources; i++) {
         struct ip_mreq_source mreqs;
         if (sources[i].ss_family != AF_INET) {
