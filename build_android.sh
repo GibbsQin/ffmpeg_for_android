@@ -19,8 +19,22 @@ build_one(){
 --nm=$PREBUILT/linux-x86_64/bin/arm-linux-androideabi-nm \
 --sysroot=$PLATFORM \
 --enable-gpl --enable-shared --disable-static --enable-small \
---disable-ffprobe --disable-ffplay --disable-ffmpeg --disable-debug \
---extra-cflags="-fPIC -DANDROID -D__thumb__ -mthumb -Wfatal-errors -Wno-deprecated -mfloat-abi=softfp -marm -march=armv7-a"
+--disable-doc --disable-ffprobe --disable-ffplay --disable-ffmpeg --disable-debug \
+--extra-cflags="-fPIC -DANDROID -D__thumb__ -mthumb -Wfatal-errors -Wno-deprecated -mfloat-abi=softfp -marm -march=armv7-a" \
+--enable-libx264 \
+--extra-cflags=-I/home/gibbs/work/fflib/include \
+--extra-ldflags=-L/home/gibbs/work/fflib/lib \
+--disable-decoders --enable-decoder=h264 --enable-decoder=aac \
+--disable-encoders --enable-encoder=aac --enable-encoder=libx264 \
+--disable-demuxers --enable-demuxer=rtsp --enable-demuxer=rtp --enable-demuxer=flv --enable-demuxer=h264 \
+--disable-muxers --enable-muxer=rtsp --enable-muxer=rtp --enable-muxer=flv --enable-muxer=h264 \
+--disable-parsers --enable-parser=aac --enable-parser=h264 \
+--disable-protocols --enable-protocol=rtmp --enable-protocol=rtp --enable-protocol=tcp --enable-protocol=udp \
+--disable-bsfs \
+--disable-indevs \
+--disable-outdevs \
+--disable-filters \
+--disable-postproc
 }
 build_one
 make
