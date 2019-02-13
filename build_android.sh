@@ -18,14 +18,15 @@ build_one(){
 --disable-stripping \
 --nm=$PREBUILT/linux-x86_64/bin/arm-linux-androideabi-nm \
 --sysroot=$PLATFORM \
---enable-gpl --enable-shared --disable-static --enable-small \
+--enable-gpl --enable-version3 --enable-shared --disable-static --enable-small \
 --disable-doc --disable-ffprobe --disable-ffplay --disable-ffmpeg --disable-debug \
 --extra-cflags="-fPIC -DANDROID -D__thumb__ -mthumb -Wfatal-errors -Wno-deprecated -mfloat-abi=softfp -marm -march=armv7-a" \
 --enable-libx264 \
+--enable-libopencore-amrnb \
 --extra-cflags=-I/home/gibbs/work/fflib/include \
 --extra-ldflags=-L/home/gibbs/work/fflib/lib \
---disable-decoders --enable-decoder=h264 --enable-decoder=aac \
---disable-encoders --enable-encoder=aac --enable-encoder=libx264 \
+--disable-decoders --enable-decoder=h264 --enable-decoder=aac --enable-decoder=libopencore_amrnb \
+--disable-encoders --enable-encoder=aac --enable-encoder=libx264 --enable-encoder=libopencore_amrnb \
 --disable-demuxers --enable-demuxer=rtsp --enable-demuxer=rtp --enable-demuxer=flv --enable-demuxer=h264 \
 --disable-muxers --enable-muxer=rtsp --enable-muxer=rtp --enable-muxer=flv --enable-muxer=h264 \
 --disable-parsers --enable-parser=aac --enable-parser=h264 \
