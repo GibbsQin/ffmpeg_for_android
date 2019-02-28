@@ -5,10 +5,10 @@
 make clean
 export NDK=/home/gibbs/work/android-ndk-r15c
 export PREBUILT=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt
-export PLATFORM=$NDK/platforms/android-26/arch-arm
+export PLATFORM=$NDK/platforms/android-18/arch-arm
 export PREFIX=../fflib
 build_one(){
-./configure --target-os=linux --prefix=$PREFIX \
+./configure --target-os=android --prefix=$PREFIX \
 --enable-cross-compile \
 --enable-runtime-cpudetect \
 --disable-asm \
@@ -18,7 +18,7 @@ build_one(){
 --disable-stripping \
 --nm=$PREBUILT/linux-x86_64/bin/arm-linux-androideabi-nm \
 --sysroot=$PLATFORM \
---enable-gpl --enable-version3 --enable-shared --disable-static --enable-small \
+--enable-gpl --enable-version3 --enable-shared --enable-static --enable-small \
 --disable-doc --disable-ffprobe --disable-ffplay --disable-ffmpeg --disable-debug \
 --extra-cflags="-fPIC -DANDROID -D__thumb__ -mthumb -Wfatal-errors -Wno-deprecated -mfloat-abi=softfp -marm -march=armv7-a" \
 --enable-libx264 \

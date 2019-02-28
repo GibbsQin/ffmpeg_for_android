@@ -2,10 +2,10 @@ make clean
 export NDK=/home/gibbs/work/android-ndk-r15c
 #一定要注意设置的架构，要与后面编译ffmpeg的架构保持一致，否则ffmpeg找不到x264
 export PREBUILT=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt
-export PLATFORM=$NDK/platforms/android-26/arch-arm
+export PLATFORM=$NDK/platforms/android-18/arch-arm
 export PREFIX=../../fflib
 build_one(){
-./configure --target-os=linux --prefix=$PREFIX \
+./configure --target-os=android --prefix=$PREFIX \
 --enable-cross-compile \
 --enable-runtime-cpudetect \
 --disable-asm \

@@ -1,5 +1,5 @@
 NDK_HOME=/home/gibbs/work/android-ndk-r15c
-SYSROOT=$NDK_HOME/platforms/android-26/arch-arm
+SYSROOT=$NDK_HOME/platforms/android-18/arch-arm
 ANDROID_BIN=$NDK_HOME/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/
 CROSS_COMPILE=${ANDROID_BIN}/arm-linux-androideabi-
 ARM_INC=$SYSROOT/usr/include
